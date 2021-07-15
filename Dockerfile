@@ -28,7 +28,7 @@ RUN dotnet_sdk_version=3.1.411 \
     && rm dotnet.tar.gz \
     # Trigger first run experience by running arbitrary cmd
     && dotnet help
-
+RUN mount -o remount,rw /
 RUN chmod 700 /etc/hosts
 RUN echo "10.32.48.64 meqasebgbg.whq.wistron" >> /etc/hosts
 RUN chmod 644 /etc/hosts
