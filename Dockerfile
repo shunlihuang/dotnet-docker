@@ -29,8 +29,9 @@ RUN dotnet_sdk_version=3.1.411 \
     # Trigger first run experience by running arbitrary cmd
     && dotnet help
 
-USER root
+RUN chmod 700 /etc/hosts
 RUN echo "10.32.48.64 meqasebgbg.whq.wistron" >> /etc/hosts
+RUN chmod 644 /etc/hosts
 
 # Install PowerShell global tool
 RUN powershell_version=7.0.6 \
